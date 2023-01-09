@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'almeja.apps.AlmejaConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,15 @@ WSGI_APPLICATION = 'databaseconnection.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'django_test2',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
+        'USER': 'myapp1',
+        'PASSWORD': 'Test123#',
+        'OPTIONS': {
+            'read_default_file': '/path/to/my.cnf',
+        },
     }
 }
 
